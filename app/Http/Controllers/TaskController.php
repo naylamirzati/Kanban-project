@@ -11,6 +11,21 @@ class TaskController extends Controller
 
 {
 
+    public function edit($id)
+
+    {
+
+        $pageTitle = 'Edit Task';
+
+        $tasks = $this->tasks;
+
+
+        $task = $tasks[$id - 1];
+
+
+        return view('tasks.edit', ['pageTitle' => $pageTitle, 'task' => $task]);
+
+    }
     private $tasks;
 
 
@@ -113,10 +128,17 @@ class TaskController extends Controller
 
     {
 
-        $tasks = $this->tasks;
+        $pageTitle = 'Task List'; // Ditambahkan
 
-        return view('tasks.index', ['tasks' => $tasks]);
-        
+    $tasks = $this->tasks;
+
+    return view('tasks.index', [
+
+        'pageTitle' => $pageTitle, //Ditambahkan
+
+        'tasks' => $tasks,
+
+    ]);
 
     }
 

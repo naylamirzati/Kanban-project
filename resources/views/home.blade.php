@@ -22,6 +22,12 @@
 
 <body>
 
+@extends('layouts.master')
+
+  
+
+@section('main')
+
   <div class="container">
 
     <div class="main">
@@ -51,6 +57,7 @@
     </div>
 
   </div>
+  @endsection
 
 </body>
 
